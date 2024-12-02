@@ -18,4 +18,4 @@ django-sslserver
 python-decouple
 whitenoise
 cryptography
-google-generativeai==1.0.0  # Replace with the actual version you're using
+google-generativeai  # Replace with the actual version you're using
