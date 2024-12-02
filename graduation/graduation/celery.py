@@ -16,7 +16,7 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 # Autodiscover tasks in all installed apps.
 app.autodiscover_tasks()
 
-
+app.conf.broker_connection_retry_on_startup = True
 @app.task(bind=True)
 def debug_task(self):
     print('Request: {0!r}'.format(self.request))

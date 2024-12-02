@@ -1,0 +1,28 @@
+{
+    "build": {
+      "command": "pip install -r requirements.txt && python manage.py migrate",
+      "dockerfile": "Dockerfile"
+    },
+    "deploy": {
+      "command": "python manage.py runserver 0.0.0.0:8000"
+    },
+    "env": {
+      "REDIS_URL": "redis://default:UfCtuNkTPpVOAirpBzrMrmdVFeFczzmA@junction.proxy.rlwy.net:39781/0",
+      "DJANGO_SECRET_KEY": "django-insecure-$%vmmb2fkkw4z3+3(r3azueo*30g1t(g)qxnrnh2ll%jqpdq7d"
+    },
+    "services": [
+      {
+        "name": "web",
+        "command": "python manage.py runserver 0.0.0.0:8000"
+      },
+      {
+        "name": "celery-worker",
+        "command": "celery -A graduation worker --loglevel=info --solo"
+      },
+      {
+        "name": "celery-beat",
+        "command": "celery -A graduation beat --loglevel=info "
+      }
+    ]
+  }
+  
