@@ -186,8 +186,8 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Use Redis as the broker and result backend
-CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Broker URL, using Redis on localhost
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'  # Same Redis instance for storing results
+CELERY_BROKER_URL = 'redis://default:UfCtuNkTPpVOAirpBzrMrmdVFeFczzmA@junction.proxy.rlwy.net:39781/0'
+CELERY_RESULT_BACKEND = 'redis://default:UfCtuNkTPpVOAirpBzrMrmdVFeFczzmA@junction.proxy.rlwy.net:39781/0'
 
 # Celery settings for serializing and handling tasks
 CELERY_ACCEPT_CONTENT = ['application/json']
