@@ -4,8 +4,8 @@
       "dockerfile": "Dockerfile"
     },
     "deploy": {
-      "command": "python manage.py runserver 0.0.0.0:8000",
-      "celery-worker": "celery -A graduation worker --loglevel=info --solo"
+      "command": "python manage.py runserver 0.0.0.0:8000 && celery -A graduation worker --loglevel=info --solo"
+       
     },
     "env": {
       "REDIS_URL": "redis://default:UfCtuNkTPpVOAirpBzrMrmdVFeFczzmA@junction.proxy.rlwy.net:39781/0",
