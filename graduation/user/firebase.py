@@ -1,10 +1,20 @@
 from .models import  GenAI,wGenAI
 from firebase_admin import credentials, firestore
 import firebase_admin
+from graduation.settings.base import *
 
 
 
-cred = credentials.Certificate('C:/Users/mhd_gamer/Desktop/grad/fitgenie-project-firebase-adminsdk-agbaf-df77862171.json') 
+cred = credentials.Certificate({"type": "service_account","project_id": "fitgenie-project",
+                                 "private_key_id":private_key_id,"private_key":private_key,
+                                 "client_email":client_email,
+                                 "client_id":client_id,
+                                 "auth_uri":auth_uri,
+                                 "token_uri":token_uri,
+                                 "auth_provider_x509_cert_url":auth_provider_x509_cert_url,
+                                 "client_x509_cert_url":client_x509_cert_url,
+                                 "universe_domain":universe_domain
+                                 }) 
 
 firebase_admin.initialize_app(cred)
 
