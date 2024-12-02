@@ -39,6 +39,7 @@ CORS_ALLOW_METHODS = [
     'PUT',
 ]
 # Application definition
+CSRF_COOKIE_SECURE = False
 
 INSTALLED_APPS = [
     'django.contrib.admin',
